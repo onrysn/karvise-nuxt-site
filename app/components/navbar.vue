@@ -2,7 +2,10 @@
   <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
     <!-- Logo -->
     <div class="text-2xl font-bold text-blue-600 cursor-pointer">
-      <NuxtLink to="/">KarVise</NuxtLink>
+      <NuxtLink to="/">
+          <img src="/img/karvise-logo.png" alt="Karvise Logo"
+            class="w-36 md:w-48" />
+        </NuxtLink>
     </div>
 
     <!-- Menü -->
