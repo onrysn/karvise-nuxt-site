@@ -11,4 +11,7 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  modules: [
+    '@primevue/nuxt-module'
+  ],
 });

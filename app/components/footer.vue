@@ -5,11 +5,8 @@
       <!-- Logo & Hakkımızda kısa -->
       <div class="flex-1">
         <NuxtLink to="/">
-          <img 
-            src="/img/karvise-logo.png" 
-            alt="Karvise Logo"
-            class="w-36 md:w-48 mb-4 bg-white p-2 rounded-lg shadow-lg" 
-          />
+          <img src="/img/karvise-logo.png" alt="Karvise Logo"
+            class="w-36 md:w-48 mb-4 bg-white p-2 rounded-lg shadow-lg" />
         </NuxtLink>
         <p class="text-gray-300 text-sm">
           Modern çözümlerle işinizi büyütün. Dış ticaret ve yazılım alanında güvenilir partneriniz.
@@ -21,10 +18,7 @@
         <h3 class="text-lg font-semibold text-white mb-4">Hızlı Erişim</h3>
         <ul class="space-y-2">
           <li v-for="item in menuItems" :key="item.to">
-            <NuxtLink 
-              :to="item.to" 
-              class="hover:text-blue-400 transition-colors duration-200"
-            >
+            <NuxtLink :to="item.to" class="hover:text-blue-400 transition-colors duration-200">
               {{ item.label }}
             </NuxtLink>
           </li>
@@ -33,10 +27,10 @@
 
       <!-- Sosyal Medya -->
       <div class="flex-1">
-        <div class="flex gap-4 mt-4 text-3xl">
-          <a href="#" class="hover:text-blue-500 transition-colors">📘</a> <!-- Facebook -->
-          <a href="#" class="hover:text-pink-500 transition-colors">📸</a> <!-- Instagram -->
-          <a href="#" class="hover:text-red-500 transition-colors">▶️</a> <!-- YouTube -->
+        <div class="flex gap-4 mt-4 text-4xl">
+          <i class="pi pi-facebook text-4xl hover:text-blue-500"></i>
+          <i class="pi pi-instagram text-4xl hover:text-pink-500"></i>
+          <i class="pi pi-youtube text-4xl hover:text-red-500"></i>
         </div>
       </div>
 
