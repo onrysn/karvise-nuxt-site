@@ -20,18 +20,17 @@
         <div class="md:w-1/2 text-center md:text-left">
           <h2 class="text-3xl font-bold mb-4">About</h2>
           <p class="text-gray-700 mb-6">
-            As Karvise Foreign Trade Consulting, we facilitate companies' expansion into international markets and serve as a reliable companion in their export processes. Our goal is to position your business competitively, sustainably, and profitably in various regions of the world, particularly in Europe.
+            As Karvise Foreign Trade Consulting, we facilitate companies' expansion into international markets and serve
+            as a reliable companion in their export processes. Our goal is to position your business competitively,
+            sustainably, and profitably in various regions of the world, particularly in Europe.
           </p>
         </div>
 
         <!-- Profil Fotoğrafı -->
         <div class="md:w-1/2 flex justify-center md:justify-end">
-  <img
-    src="/img/profile.png"
-    alt="Profil"
-    class="rounded-xl shadow-lg w-48 h-100 md:w-64 md:h-100 object-cover"
-  />
-</div>
+          <img src="/img/profile.png" alt="Profil"
+            class="rounded-xl shadow-lg w-48 h-100 md:w-64 md:h-100 object-cover" />
+        </div>
 
 
       </div>

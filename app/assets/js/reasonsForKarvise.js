@@ -1,0 +1,23 @@
+// src/data/services.js
+export const reasonsForKarvise = [
+  {
+    title: "Güvenilir Yol Arkadaşı",
+    description: "Şeffaf raporlama ve söz verdiğimiz KPI’lar ile ilerleriz."
+  },
+  {
+    title: "Küresel Bakış",
+    description: "Farklı ülkelerde geçerli mevzuat ve pazar dinamiklerine hakimiz."
+  },
+  {
+    title: "Veri + Yapay Zeka",
+    description: "Pazar, müşteri ve rakip analizlerinde kendi araçlarımızı kullanırız."
+  },
+  {
+    title: "Hızlı Uygulama",
+    description: "Stratejiyi operasyonla birleştirir; “plan–yap–ölç” döngüsünü kısa tutarız."
+  },
+  {
+    title: "Uzun Vadeli Ortaklık",
+    description: "Ekiplerinizi eğitir, kalıcı kapasite oluştururuz."
+  }
+];
