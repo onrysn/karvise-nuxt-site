@@ -1,0 +1,44 @@
+export const courses = [
+  {
+    title: "Pazar Araştırması Eğitimi",
+    subtitle: "Hedef Pazar Analizi",
+    description: "Hedef pazarınızı seçme, potansiyel müşteri kitlenizi analiz etme ve rekabet avantajı oluşturacak stratejiler geliştirme becerilerini kazanacaksınız. Eğitim sonunda, uluslararası pazarlara giriş için veri temelli kararlar alabileceksiniz.",
+    img: "/img/courses/pazar_arastirmasi.jpg",
+    link: "#"
+  },
+  {
+    title: "Dış Ticarette Yapay Zeka",
+    subtitle: "AI ile İhracat ve Pazar Analizi",
+    description: "Yapay zeka teknolojilerini dış ticaret süreçlerine entegre etmeyi öğrenecek. Veri analizi, talep tahmini ve otomasyon çözümleriyle iş süreçlerinizi daha hızlı ve hatasız yönetebileceksiniz.",
+    img: "/img/courses/yapay_zeka.jpg",
+    link: "#"
+  },
+  {
+    title: "Marka Konumlandırma",
+    subtitle: "Uluslararası Pazarlarda Marka Stratejisi",
+    description: "Markanızı global pazarda doğru konumlandırma tekniklerini öğretir. Katılımcılar, marka kimliğini güçlendirecek stratejiler ve hedef kitleye ulaşmada etkili iletişim yöntemlerini öğrenecektir.",
+    img: "/img/courses/marka_konumlandirma.jpg",
+    link: "#"
+  },
+  {
+    title: "İhracat Evraklarının Hazırlanması",
+    subtitle: "Dış Ticarette Gerekli Belgeler",
+    description: "Gümrük ve ihracat belgelerini eksiksiz ve doğru şekilde düzenleme becerisi kazanacaksınız. Eğitim sonunda, evrak sürecinde zaman kaybı ve hata riskini minimuma indireceksiniz.",
+    img: "/img/courses/evrak_hazirlama.jpg",
+    link: "#"
+  },
+  {
+    title: "Ödeme Yöntemleri",
+    subtitle: "Uluslararası Ticarette Ödeme Şekilleri",
+    description: "Katılımcılar, uluslararası ticarette kullanılan güvenli ödeme yöntemlerini ve riskleri azaltma yollarını öğrenecek. Böylece ihracat işlemlerinde finansal güvenliğinizi sağlayabileceksiniz.",
+    img: "/img/courses/odeme_yontemleri.jpg",
+    link: "#"
+  },
+  {
+    title: "E-Ticaret ve Online Satış Stratejileri",
+    subtitle: "Dijital Satış ve Pazarlama",
+    description: "Bu eğitim, dijital platformlarda satış yapma tekniklerini, global müşterilere ulaşma yollarını ve online pazarlama stratejilerini kapsar. Eğitim sonunda, e-ticaret satışlarınızı artıracak planları uygulayabileceksiniz.",
+    img: "/img/courses/satis_stratejileri.jpg",
+    link: "#"
+  }
+];

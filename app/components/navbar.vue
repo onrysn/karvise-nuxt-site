@@ -98,9 +98,8 @@ const menuItems = computed(() => {
         label: "Yazılım Çözümlerimiz",
         to: "/dis-ticaret/yazilim",
         children: [
-          { label: "Web Uygulamaları", to: "/dis-ticaret/yazilim/web" },
-          { label: "Mobil Uygulamalar", to: "/dis-ticaret/yazilim/mobil" },
-          { label: "ERP Sistemleri", to: "/dis-ticaret/yazilim/erp" },
+          { label: "ReachSuite", to: "/dis-ticaret/yazilim/reachsuite" },
+          { label: "Karvise ERP", to: "/dis-ticaret/yazilim/erp" },
         ]
       },
       { label: "Eğitimlerimiz", to: "/dis-ticaret/egitimler" },
