@@ -33,7 +33,7 @@
                 <div class="flex justify-center items-center gap-3">
                     <span v-if="software.status" class="px-3 py-1 bg-yellow-500 text-white rounded-full text-sm">{{
                         software.status }}</span>
-                    <NuxtLink :to="software.link"
+                    <NuxtLink :to="`/dis-ticaret/yazilimDetails/${software.slug}`"
                         class="inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-center">
                         Daha Fazla Bilgi Al
                     </NuxtLink>

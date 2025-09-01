@@ -54,7 +54,7 @@
                         Global pazarlarda potansiyel müşterilerinizi hızlı ve verimli şekilde tespit eder.
                     </p>
                     <span class="block text-gray-400 mb-2">Made by Karvise</span>
-                    <NuxtLink to="/yazilim/reachsuite"
+                    <NuxtLink to="/dis-ticaret/yazilimDetails/reachsuite"
                         class="inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
                         Daha Fazla Bilgi Al
                     </NuxtLink>
@@ -65,7 +65,7 @@
                         Siparişten teslimata kadar üretim sürecinizi adım adım kontrol edin.
                     </p>
                     <span class="block text-gray-400 mb-2">Made by Karvise</span>
-                    <NuxtLink to="/yazilim/erp"
+                    <NuxtLink to="/dis-ticaret/yazilimDetails/erp"
                         class="inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
                         Daha Fazla Bilgi Al
                     </NuxtLink>
@@ -76,7 +76,7 @@
                         Müşteri ilişkilerinizi ve satış ağınızı kolayca yönetin.
                     </p>
                     <span class="block text-gray-400 mb-2">Made by Karvise</span>
-                    <NuxtLink to="/yazilim/crm"
+                    <NuxtLink to="/"
                         class="inline-block px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
                         Daha Fazla Bilgi Al
                     </NuxtLink>

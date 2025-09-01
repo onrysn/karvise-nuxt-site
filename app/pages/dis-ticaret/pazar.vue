@@ -15,7 +15,7 @@
                     class="px-6 py-3 bg-white text-green-700 font-semibold rounded-xl shadow-lg hover:bg-gray-200 transition">
                     📩 Pazar Keşfi Talep Et
                 </a>
-                <NuxtLink to="/iletisim"
+                <NuxtLink to="/dis-ticaret/iletisim"
                     class="px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-green-700 transition">
                     İletişime Geç
                 </NuxtLink>
@@ -131,7 +131,7 @@
                     class="px-6 py-3 bg-white text-green-700 font-semibold rounded-xl shadow-lg hover:bg-gray-200 transition">
                     📩 Pazar Keşfi Talep Et
                 </a>
-                <NuxtLink to="/iletisim"
+                <NuxtLink to="/dis-ticaret/iletisim"
                     class="px-6 py-3 border border-white text-white rounded-xl hover:bg-white hover:text-green-700 transition">
                     İletişime Geç
                 </NuxtLink>

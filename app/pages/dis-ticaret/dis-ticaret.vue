@@ -53,7 +53,7 @@
           <!-- Card 1 -->
           <div class="bg-green-700 rounded-2xl shadow-md p-6 hover:shadow-xl transition flex flex-col justify-between">
             <h3 class="text-6xl text-white font-semibold mb-3 text-left">Dış Ticaret Danışmanlığı</h3>
-            <p class="text-gray-600 text-white mb-8 mt-8 text-left">
+            <p class="text-white mb-8 mt-8 text-left">
               Küresel pazarlara açılmanız için stratejik planlama, müşteri bulma ve süreç yönetimi desteği.
             </p>
             <NuxtLink to="/dis-ticaret/danismanlik"
@@ -77,10 +77,10 @@
           <!-- Card 3 -->
           <div class="bg-green-700 rounded-2xl shadow-md p-6 hover:shadow-xl transition flex flex-col justify-between">
             <h3 class="text-6xl text-white font-semibold mb-3 text-right">İhracata Hazırlık ve Eğitim</h3>
-            <p class="text-gray-600 text-white mb-8 mt-8 text-right">
+            <p class="text-white mb-8 mt-8 text-right">
               Ekibinizi dış ticaret süreçleri, müşteri iletişimi ve pazarlama konularında eğitiyoruz.
             </p>
-            <NuxtLink to="/dis-ticaret/egitim"
+            <NuxtLink to="/dis-ticaret/egitimler"
               class="inline-block px-4 py-2 bg-white rounded-lg hover:bg-gray-200 transition">
               Daha Fazla
             </NuxtLink>
@@ -101,7 +101,7 @@
             İşinizi global pazarlara taşımak için ilk adımı birlikte atalım.
             Ücretsiz ön görüşme ile firmanız için en uygun stratejiyi belirleyelim.
           </p>
-          <NuxtLink to="/iletisim"
+          <NuxtLink to="/dis-ticaret/iletisim"
             class="inline-block px-6 py-3 bg-white text-green-700 rounded-xl shadow-md hover:bg-gray-200 transition w-fit">
             Randevu Alın
           </NuxtLink>

@@ -84,9 +84,9 @@ const menuItems = computed(() => {
   if (props.theme === "themeA") {
     return [
       { label: "Home", to: "/export-catalog/export-catalog" },
-      { label: "About", to: "/export-catalog/about" },
-      { label: "Services", to: "/export-catalog/services" },
-      { label: "Contact", to: "/export-catalog/contact" },
+      // { label: "About", to: "/export-catalog/about" },
+      // { label: "Services", to: "/export-catalog/services" },
+      // { label: "Contact", to: "/export-catalog/contact" },
     ]
   } else {
     return [
@@ -98,8 +98,8 @@ const menuItems = computed(() => {
         label: "Yazılım Çözümlerimiz",
         to: "/dis-ticaret/yazilim",
         children: [
-          { label: "ReachSuite", to: "/dis-ticaret/yazilim/reachsuite" },
-          { label: "Karvise ERP", to: "/dis-ticaret/yazilim/erp" },
+          { label: "ReachSuite", to: "/dis-ticaret/yazilimDetails/reachsuite" },
+          { label: "Karvise ERP", to: "/dis-ticaret/yazilimDetails/erp" },
         ]
       },
       { label: "Eğitimlerimiz", to: "/dis-ticaret/egitimler" },

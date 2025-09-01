@@ -5,7 +5,7 @@
         <img :src="slide.image" class="w-full h-96 object-cover" />
         <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white">
           <h1 class="text-3xl font-bold">{{ slide.title }}</h1>
-          <H2 class="mt-2 text-lg">{{ slide.subtitle }}</H2>
+          <h2 class="mt-2 text-lg">{{ slide.subtitle }}</h2>
         </div>
       </div>
     </div>

@@ -80,7 +80,7 @@
                         class="px-6 py-3 bg-green-600 text-white rounded-xl shadow-lg hover:bg-green-700 transition">
                         Hızlı Görüşme Planla
                     </a>
-                    <NuxtLink to="/dis-ticaret/egitim"
+                    <NuxtLink to="/dis-ticaret/egitimler"
                         class="px-6 py-3 bg-white text-green-700 rounded-xl shadow-lg hover:bg-gray-200 transition">
                         Eğitimleri İncele
                     </NuxtLink>
