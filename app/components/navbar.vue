@@ -84,6 +84,7 @@ const menuItems = computed(() => {
   if (props.theme === "themeA") {
     return [
       { label: "Home", to: "/export-catalog/export-catalog" },
+      { label: "Products", to: "/export-catalog/products" },
       // { label: "About", to: "/export-catalog/about" },
       // { label: "Services", to: "/export-catalog/services" },
       // { label: "Contact", to: "/export-catalog/contact" },

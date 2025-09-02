@@ -1,0 +1,90 @@
+[
+  {
+    "title": "Küp Serisi",
+    "category": "Children Playground and City Furniture",
+    "productSubCategory": "Playground",
+    "subtitle": "CB-100",
+    "description": "Doğadan esinlenen Küp Serisi ...",
+    "productDetail": "Yaş Aralığı 👶: 5-12\nKullanıcı Sayısı 👥: 45\nDüşme Yüksekliği 📏⬇: 3500\nTepe Yüksekliği 📏⬆: 6000\nOturma Alanı (yerleşim alanı) 📐: 8000x12000\nGüvenlik Alanı 🛡: 12000x16000",
+    "price": "-",
+    "img": "/img/courses/pazar_arastirmasi.jpg",
+    "imgProductDetail": [
+      "/img/courses/foto1.jpg",
+      "/img/courses/foto2.jpg",
+      "/img/courses/foto3.jpg"
+    ],
+    "link": "#",
+    "isDeleted": true
+  },
+  {
+    "title": "Küp Serisi",
+    "category": "Children Playground and City Furniture",
+    "productSubCategory": "Playground",
+    "subtitle": "CB-108",
+    "description": "Doğadan esinlenen Küp Serisi ...",
+    "productDetail": "Yaş Aralığı 👶: 5-12\nKullanıcı Sayısı 👥: 40\nDüşme Yüksekliği 📏⬇: 3000\nTepe Yüksekliği 📏⬆: 5500\nOturma Alanı (yerleşim alanı) 📐: 8500x10300\nGüvenlik Alanı 🛡: 12500x14300",
+    "price": "-",
+    "img": "/img/courses/pazar_arastirmasi2.jpg",
+    "imgProductDetail": [
+      "/img/courses/foto4.jpg",
+      "/img/courses/foto5.jpg",
+      "/img/courses/foto6.jpg",
+      "/img/courses/foto7.jpg"
+    ],
+    "link": "#",
+    "isDeleted": false
+  },
+  {
+    "title": "test",
+    "subtitle": "test",
+    "isDeleted": false
+  },
+  {
+    "title": "Ahşap Tırmanma Kulesi",
+    "category": "Children Playground and City Furniture",
+    "productSubCategory": "Climbing",
+    "subtitle": "CL-200",
+    "description": "Doğal ahşap malzemeden yapılmış tırmanma kulesi.",
+    "productDetail": "Yaş Aralığı 👶: 6-14\nKullanıcı Sayısı 👥: 30\nDüşme Yüksekliği 📏⬇: 2500\nTepe Yüksekliği 📏⬆: 4500\nOturma Alanı (yerleşim alanı) 📐: 5000x7000\nGüvenlik Alanı 🛡: 7000x9000",
+    "price": "2500₺",
+    "img": "/img/courses/ahsap_tirmanma.jpg",
+    "imgProductDetail": [
+      "/img/courses/ahsap1.jpg",
+      "/img/courses/ahsap2.jpg"
+    ],
+    "link": "#",
+    "isDeleted": false
+  },
+  {
+    "title": "Mini Kaydırak Seti",
+    "category": "Children Playground and City Furniture",
+    "productSubCategory": "Slide",
+    "subtitle": "SL-310",
+    "description": "Çocuklar için küçük kaydırak ve tırmanma seti.",
+    "productDetail": "Yaş Aralığı 👶: 3-6\nKullanıcı Sayısı 👥: 10\nDüşme Yüksekliği 📏⬇: 1200\nTepe Yüksekliği 📏⬆: 2000\nOturma Alanı (yerleşim alanı) 📐: 3000x4000\nGüvenlik Alanı 🛡: 4000x5000",
+    "price": "1200₺",
+    "img": "/img/courses/mini_kaydirak.jpg",
+    "imgProductDetail": [
+      "/img/courses/mini1.jpg",
+      "/img/courses/mini2.jpg"
+    ],
+    "link": "#",
+    "isDeleted": false
+  },
+  {
+    "title": "Park Bankı",
+    "category": "Children Playground and City Furniture",
+    "productSubCategory": "City Furniture",
+    "subtitle": "CF-501",
+    "description": "Dayanıklı malzemeden yapılmış park bankı.",
+    "productDetail": "Uzunluk: 180cm\nMalzeme: Ahşap + Metal\nRenk: Kahverengi\nKapasite: 3-4 kişi",
+    "price": "800₺",
+    "img": "/img/courses/park_bank.jpg",
+    "imgProductDetail": [
+      "/img/courses/park1.jpg",
+      "/img/courses/park2.jpg"
+    ],
+    "link": "#",
+    "isDeleted": false
+  }
+]

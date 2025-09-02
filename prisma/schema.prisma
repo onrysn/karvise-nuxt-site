@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Category {
+  id            Int           @id @default(autoincrement())
+  name          String        @unique
+  products      Product[]
+  subCategories SubCategory[] // <-- ekledik
+}
+
+
+model SubCategory {
+  id         Int       @id @default(autoincrement())
+  name       String
+  category   Category  @relation(fields: [categoryId], references: [id])
+  categoryId Int
+  products   Product[]
+}
+
+model Product {
+  id                 Int       @id @default(autoincrement())
+  title              String
+  subtitle           String    @unique
+  description        String?
+  productDetail      String?
+  price              String?
+  img                String?
+  imgProductDetail   Json?
+  link               String?
+  isDeleted          Boolean   @default(false)
+  createdAt          DateTime  @default(now())
+
+  categoryId        Int?
+  category          Category? @relation(fields: [categoryId], references: [id])
+  subCategoryId     Int?
+  subCategory       SubCategory? @relation(fields: [subCategoryId], references: [id])
+}
