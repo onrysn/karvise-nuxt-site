@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Children Playground And City Furniture",
+    "subtitle": "Click to discover our modern playground and street furniture solutions.",
+    "image": "/img/playground.jpg",
+    "link": "/catalog/1",
+    "order": 1
+  },
+  {
+    "title": "Aluminum Ladder",
+    "subtitle": "Click to discover our durable, high-quality aluminum ladder solutions.",
+    "image": "/img/ladder.jpg",
+    "link": "/catalog/2",
+    "order": 2
+  },
+  {
+    "title": "Motor Vehicles Spare Parts",
+    "subtitle": "Click to see our solutions for all kinds of tractors, passenger cars, buses and heavy construction equipment.",
+    "image": "/img/autoParts.jpg",
+    "link": "/catalog/3",
+    "order": 3
+  }
+]

@@ -4,15 +4,24 @@ import path from 'path'
 
 const prisma = new PrismaClient()
 const products = JSON.parse(fs.readFileSync('./data/products.json', 'utf-8'))
+const slides = JSON.parse(fs.readFileSync('./data/slides.json', 'utf-8'))
+const catalogs = JSON.parse(fs.readFileSync('./data/catalogs.json', 'utf-8'))
+const courses = JSON.parse(fs.readFileSync('./data/courses.json', 'utf-8'))
+const services = JSON.parse(fs.readFileSync('./data/services.json', 'utf-8'))
+const softwares = JSON.parse(fs.readFileSync('./data/softwares.json', 'utf-8'))
+const processStages = JSON.parse(fs.readFileSync('./data/processStages.json', 'utf-8'))
+const reasonsForKarvise = JSON.parse(fs.readFileSync('./data/reasonsForKarvise.json', 'utf-8'))
+const questions = JSON.parse(fs.readFileSync('./data/questions.json', 'utf-8'))
 
 async function main() {
+  // =======================
+  // 📌 PRODUCTS
+  // =======================
   for (const p of products) {
     try {
-      // 1️⃣ Mevcut olmayan veya null resimlerde placeholder kullan
       const imgPath = path.join(process.cwd(), 'public', p.img || '')
       const img = fs.existsSync(imgPath) ? p.img : '/img/products/coming-soon.jpg'
 
-      // 2️⃣ Category ekle veya bul
       let category = null
       if (p.category) {
         category = await prisma.category.upsert({
@@ -22,7 +31,6 @@ async function main() {
         })
       }
 
-      // 3️⃣ SubCategory ekle veya bul (farklı sektörlerde aynı alt kategori olabilir)
       let subCategory = null
       if (p.productSubCategory && category) {
         subCategory = await prisma.subCategory.findFirst({
@@ -36,7 +44,6 @@ async function main() {
         }
       }
 
-      // 4️⃣ Product ekle veya güncelle
       await prisma.product.upsert({
         where: { subtitle: p.subtitle },
         update: {
@@ -70,6 +77,114 @@ async function main() {
     } catch (err) {
       console.error(`Hata: ${p.subtitle}`, err.message)
     }
+  }
+  
+  // =======================
+  // 📌 SLIDES
+  // =======================
+  await prisma.slide.deleteMany()
+  for (const s of slides) {
+    await prisma.slide.create({ data: s })
+    console.log(`✅ Seeded Slide: ${s.title}`)
+  }
+
+  // =======================
+  // 📌 CATALOGS
+  // =======================
+  await prisma.catalog.deleteMany()
+  for (const c of catalogs) {
+    await prisma.catalog.create({ data: c })
+    console.log(`✅ Seeded Catalog: ${c.title}`)
+  }
+
+  // =======================
+  // 📌 COURSES
+  // =======================
+  await prisma.course.deleteMany()
+  for (const c of courses) {
+    await prisma.course.create({ data: c })
+    console.log(`✅ Seeded Course: ${c.title}`)
+  }
+
+  // =======================
+  // 📌 SERVİCES
+  // =======================
+  for (const s of services) {
+    try {
+      await prisma.service.upsert({
+        where: { title: s.title },
+        update: {
+          description: s.description,
+          status: s.status
+        },
+        create: {
+          title: s.title,
+          description: s.description,
+          status: s.status
+        }
+      })
+      console.log(`✅ Seeded Service: ${s.title}`)
+    } catch (err) {
+      console.error(`❌ Error seeding service: ${s.title}`, err.message)
+    }
+  }
+  
+  // =======================
+  // 📌 SOFTWARES
+  // =======================
+  for (const s of softwares) {
+    try {
+      await prisma.software.upsert({
+        where: { slug: s.slug },
+        update: {
+          title: s.title,
+          description: s.description,
+          logo: s.logo,
+          status: s.status,
+          ctaLink: s.ctaLink,
+          details: s.details
+        },
+        create: {
+          title: s.title,
+          slug: s.slug,
+          description: s.description,
+          logo: s.logo,
+          status: s.status,
+          ctaLink: s.ctaLink,
+          details: s.details
+        }
+      })
+      console.log(`✅ Seeded Software: ${s.title}`)
+    } catch (err) {
+      console.error(`❌ Error seeding software: ${s.title}`, err.message)
+    }
+  }
+
+  // =======================
+  // 📌 PROCESS STAGES
+  // =======================
+  await prisma.ProcessStage.deleteMany()
+  for (const c of processStages) {
+    await prisma.ProcessStage.create({ data: c })
+    console.log(`✅ Seeded ProcessStage: ${c.title}`)
+  }
+
+  // =======================
+  // 📌 REASON FOR KARVİSE
+  // =======================
+  await prisma.ReasonForKarvise.deleteMany()
+  for (const c of reasonsForKarvise) {
+    await prisma.ReasonForKarvise.create({ data: c })
+    console.log(`✅ Seeded ReasonForKarvise: ${c.title}`)
+  }
+
+  // =======================
+  // 📌 QUESTIONS
+  // =======================
+  await prisma.Question.deleteMany()
+  for (const c of questions) {
+    await prisma.Question.create({ data: c })
+    console.log(`✅ Seeded Questions: ${c.title}`)
   }
 }
 

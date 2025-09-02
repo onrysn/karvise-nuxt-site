@@ -58,5 +58,5 @@
 </template>
 
 <script setup>
-import { softwares } from '~/assets/js/softwares';
+    const { data: softwares } = await useAsyncData('softwares', () => $fetch('/api/softwares'))
 </script>

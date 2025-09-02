@@ -135,7 +135,7 @@
 </template>
 
 <script setup>
-import { services } from '~/assets/js/services.js'
-import { reasonsForKarvise } from '~/assets/js/reasonsForKarvise.js'
-import { processStages } from '~/assets/js/processStages.js'
+const { data: services } = await useAsyncData('services', () => $fetch('/api/services'))
+const { data: reasonsForKarvise } = await useAsyncData('reasonsForKarvise', () => $fetch('/api/reasonsForKarvise'))
+const { data: processStages } = await useAsyncData('processStages', () => $fetch('/api/processStages'))
 </script>

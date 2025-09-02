@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Yeni Ürünler",
+    "subtitle": "2025 Koleksiyonu",
+    "image": "/img/playground.jpg",
+    "link": "/product/1",
+    "order": 1
+  },
+  {
+    "title": "Popüler Ürünler",
+    "subtitle": "En çok satanlar",
+    "image": "/img/ladder.jpg",
+    "link": "/product/2",
+    "order": 2
+  },
+  {
+    "title": "Özel Fırsatlar",
+    "subtitle": "Sadece bu ay",
+    "image": "/img/autoParts.jpg",
+    "link": "/product/3",
+    "order": 3
+  }
+]

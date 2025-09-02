@@ -51,5 +51,5 @@
 </template>
 
 <script setup>
-import { courses } from '~/assets/js/courses.js'
+const { data: courses } = await useAsyncData('courses', () => $fetch('/api/courses'))
 </script>

@@ -101,7 +101,7 @@
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">Sık Sorulan Sorular</h2>
 
             <div class="space-y-4">
-                <div v-for="(question, index) in questions" :key="index"
+                <div v-for="(question, index) in questionsWithOpen" :key="index"
                     class="bg-white rounded-xl shadow p-4 cursor-pointer w-full md:w-96 mx-auto" @click="toggle(index)">
                     <div class="flex justify-between items-center">
                         <h3 class="font-semibold text-gray-900">{{ question.question }}</h3>
@@ -141,11 +141,22 @@
 </template>
 
 <script setup>
-import { softwares } from '~/assets/js/softwares';
-import { questions } from '~/assets/js/sss';
+import { ref, onMounted } from 'vue'
+
+const { data: softwares } = await useAsyncData('softwares', () => $fetch('/api/softwares'))
+const { data: questionsData } = await useAsyncData('questions', () => $fetch('/api/questions'))
+
+// Reactive array oluştur
+const questionsWithOpen = ref([])
+
+onMounted(() => {
+    if (questionsData.value) {
+        questionsWithOpen.value = questionsData.value.map(q => ({ ...q, open: false }))
+    }
+})
 
 function toggle(index) {
-    questions[index].open = !questions[index].open;
+    questionsWithOpen.value[index].open = !questionsWithOpen.value[index].open
 }
 </script>
 <style>

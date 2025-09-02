@@ -1,9 +1,11 @@
 <script setup>
 import { useRoute } from 'vue-router'
-import { softwares } from '~/assets/js/softwares.js'
+const { data: softwares } = await useAsyncData('softwares', () => $fetch('/api/softwares'))
 
 const route = useRoute()
-const softwareDetail = softwares.find(s => s.slug === route.params.slug)
+const softwareDetail = computed(() =>
+  softwares.value?.find(s => s.slug === route.params.slug)
+)
 </script>
 
 <template>
