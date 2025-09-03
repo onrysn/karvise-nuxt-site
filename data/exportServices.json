@@ -1,0 +1,85 @@
+[
+  {
+    "id": 1,
+    "title": "Supply & Audit Services",
+    "slug": "supply-audit-services",
+    "description": "Products are audited according to Karvise standards for labeling, packaging, lead times and quality control. In case of non-conformity, production is redone or packaging is corrected.",
+    "icon": "fa-clipboard-check",
+    "features": [
+      "Comprehensive quality control processes",
+      "Pre-production, during production and post-production audits",
+      "Compliance reporting and certification"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "International Trade Consulting",
+    "slug": "international-trade-consulting",
+    "description": "We provide not only product sourcing but also export consulting services to companies. This way, manufacturers improve their export quality, while importers access high-standard products.",
+    "icon": "fa-handshake",
+    "features": [
+      "Export compliance consulting",
+      "Market research and strategy development",
+      "International trade regulations support"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Price Advantage",
+    "slug": "price-advantage",
+    "description": "Thanks to our agreements, we offer importers supply opportunities below factory prices. We reduce costs by leveraging economies of scale.",
+    "icon": "fa-tags",
+    "features": [
+      "Supply below factory list prices",
+      "Cost advantage through bulk purchasing power",
+      "Transparent pricing policy"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Continuous Updates",
+    "slug": "continuous-updates",
+    "description": "We guarantee that our customers are informed at every stage by providing real-time information flow about production and shipping processes. Transparent communication with customized reporting.",
+    "icon": "fa-sync-alt",
+    "features": [
+      "Real-time production tracking",
+      "Regular progress reports",
+      "Online order tracking portal"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Wide Industry Diversity",
+    "slug": "wide-industry-diversity",
+    "description": "We have a portfolio of specialized manufacturers in many areas from playground equipment to industrial spare parts, from sports equipment to rubber floor coatings, urban furniture, modern sun loungers and decorative lighting, aluminum ladders, and pedestals for flooring.",
+    "icon": "fa-industry",
+    "features": [
+      "Multi-sector manufacturer network",
+      "Customized production solutions",
+      "Qualified manufacturer selection and auditing"
+    ],
+    "sectorBadges": [
+      "Playground Equipment",
+      "Industrial Spare Parts",
+      "Sports Equipment",
+      "Rubber Floor Coatings",
+      "Urban Furniture",
+      "Modern Sun Loungers",
+      "Decorative Lighting",
+      "Aluminum Ladders",
+      "Pedestals for Flooring"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Quality Guarantee",
+    "slug": "quality-guarantee",
+    "description": "We ensure that quality standards are met throughout the entire supply process. Your products go through a comprehensive quality control process before shipment.",
+    "icon": "fa-shield-alt",
+    "features": [
+      "Comprehensive pre-shipment inspection",
+      "Compliance with international standards",
+      "Free replacement in case of quality issues"
+    ]
+  }
+]

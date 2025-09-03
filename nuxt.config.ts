@@ -6,7 +6,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   // Global CSS
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/main.css',
+    '@fortawesome/fontawesome-free/css/all.min.css'
+  ],
 
   // Vite ve Tailwind
   vite: {

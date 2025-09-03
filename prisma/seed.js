@@ -12,6 +12,7 @@ const softwares = JSON.parse(fs.readFileSync('./data/softwares.json', 'utf-8'))
 const processStages = JSON.parse(fs.readFileSync('./data/processStages.json', 'utf-8'))
 const reasonsForKarvise = JSON.parse(fs.readFileSync('./data/reasonsForKarvise.json', 'utf-8'))
 const questions = JSON.parse(fs.readFileSync('./data/questions.json', 'utf-8'))
+const exportServices = JSON.parse(fs.readFileSync('./data/exportServices.json', 'utf-8'))
 
 async function main() {
   // =======================
@@ -185,6 +186,15 @@ async function main() {
   for (const c of questions) {
     await prisma.Question.create({ data: c })
     console.log(`✅ Seeded Questions: ${c.title}`)
+  }
+
+  // =======================
+  // 📌 EXPORT SERVİCES
+  // =======================
+  await prisma.ExportService.deleteMany()
+  for (const c of exportServices) {
+    await prisma.ExportService.create({ data: c })
+    console.log(`✅ Seeded ExportServices: ${c.title}`)
   }
 }
 
