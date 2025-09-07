@@ -45,6 +45,20 @@ export default defineNuxtConfig({
     }]
   ],
 
+  // Runtime Config: Render'da eklediğin env değişkenleri burada tanımlanıyor
+  runtimeConfig: {
+    // Private keys (server-side only)
+    databaseUrl: process.env.DATABASE_URL,
+    apiKey: process.env.API_KEY,
+    jwtSecret: process.env.JWT_SECRET,
+
+    // Public keys (client-side erişilebilir)
+    public: {
+      baseUrl: process.env.NUXT_PUBLIC_BASE_URL || "/",
+      anotherPublicVar: process.env.NUXT_PUBLIC_ANOTHER_VAR
+    }
+  },
+
   // Meta & Head
   app: {
     baseURL: "/", // hosting alt dizinde ise "/altklasor/" yapabilirsin
