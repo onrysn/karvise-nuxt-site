@@ -7,8 +7,8 @@
 </template>
 
 <script setup>
-import Navbar from '~/components/Navbar.vue'
-import Footer from '~/components/Footer.vue'
+import Navbar from '~/components/navbar.vue'
+import Footer from '~/components/footer.vue'
 import { ref, onMounted } from 'vue'
 
 const theme = ref('themeA')
