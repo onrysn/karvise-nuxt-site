@@ -58,10 +58,10 @@
             <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
                 Experience safe, transparent and advantageous sourcing from Türkiye with Karvise.
             </p>
-            <NuxtLink to="/contact"
+            <!-- <NuxtLink to="/contact"
                 class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition">
                 Request a Quote
-            </NuxtLink>
+            </NuxtLink> -->
         </section>
     </div>
 </template>

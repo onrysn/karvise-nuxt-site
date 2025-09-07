@@ -2,6 +2,16 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
+  // Statik site üretim modu
+  ssr: true,
+  nitro: {
+    prerender: {
+      ignore: ['/dis-ticaret/yazilimDetails/crm', '/dis-ticaret/yazilimDetails/memory']
+    },
+    preset: "static" // shared hosting için static export
+  },
+
+  // Uyumluluk
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
@@ -11,20 +21,19 @@ export default defineNuxtConfig({
     '@fortawesome/fontawesome-free/css/all.min.css'
   ],
 
-  // Vite ve Tailwind
+  // Vite + Tailwind
   vite: {
     plugins: [tailwindcss()],
     build: {
-      minify: 'esbuild',
-      target: 'esnext'
+      minify: "esbuild",
+      target: "esnext",
+      sourcemap: false
     }
   },
 
-  // Modüller (TS uyumlu)
+  // Modüller
   modules: [
     '@primevue/nuxt-module',
-
-    // Nuxt Image modülü parametre ile
     ['@nuxt/image', {
       provider: 'static',
       presets: {
@@ -36,8 +45,9 @@ export default defineNuxtConfig({
     }]
   ],
 
-  // Global app/head ayarları
+  // Meta & Head
   app: {
+    baseURL: "/", // hosting alt dizinde ise "/altklasor/" yapabilirsin
     head: {
       htmlAttrs: {
         lang: 'tr'
