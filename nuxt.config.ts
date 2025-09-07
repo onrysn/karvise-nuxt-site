@@ -2,14 +2,7 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  // Statik site üretim modu
-  ssr: true,
-  nitro: {
-    prerender: {
-      ignore: ['/dis-ticaret/yazilimDetails/crm', '/dis-ticaret/yazilimDetails/memory']
-    },
-    preset: "static" // shared hosting için static export
-  },
+
 
   // Uyumluluk
   compatibilityDate: "2025-07-15",
@@ -27,7 +20,6 @@ export default defineNuxtConfig({
     build: {
       minify: "esbuild",
       target: "esnext",
-      sourcemap: false
     }
   },
 
@@ -45,16 +37,10 @@ export default defineNuxtConfig({
     }]
   ],
 
-  runtimeConfig: {
-    databaseUrl: process.env.DATABASE_URL || 'file:./prisma/dev.db', 
-    public: {
-      baseUrl: process.env.NUXT_PUBLIC_BASE_URL || '/'
-    }
-  },
+  
 
   // Meta & Head
   app: {
-    baseURL: "/", // hosting alt dizinde ise "/altklasor/" yapabilirsin
     head: {
       htmlAttrs: {
         lang: 'tr'
