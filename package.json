@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt dev",
-    "build": "nuxt build && cp prisma/dev.db .output/prisma/dev.db",
+    "build": "nuxt build && mkdir -p .output/prisma && cp prisma/dev.db .output/prisma/dev.db",
     "preview": "nuxt preview",
     "start": "nuxt preview",
     "postinstall": "nuxt prepare"
