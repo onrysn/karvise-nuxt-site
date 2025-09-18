@@ -41,41 +41,68 @@
                 <div class="p-4 flex flex-col flex-1">
                     <h2 class="text-xl font-bold mb-1 text-gray-800">{{ product.title }}</h2>
                     <h3 class="text-sm text-gray-500 mb-2">{{ product.subtitle }}</h3>
-                    <p class="text-gray-700 mb-4 flex-1">{{ product.description || 'Açıklama yok' }}</p>
                     <div class="flex justify-between items-center mt-auto gap-2">
-                        <span class="text-blue-600 font-semibold">{{ product.price || 'Fiyat Belirtilmemiş' }}</span>
-
+                        <span class="text-blue-600 font-semibold">
+                            {{ product.price || 'Fiyat Belirtilmemiş' }}
+                        </span>
                         <div class="flex gap-2">
-                            <!-- <button @click="deleteProduct(product.subtitle)"
-                                class="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600 transition duration-200">
-                                Sil
-                            </button> -->
-
-                            <!-- WhatsApp Butonu -->
                             <a :href="`https://wa.me/905073675004?text=Merhaba, ${encodeURIComponent(product.title)} hakkında bilgi almak istiyorum.`"
                                 target="_blank"
                                 class="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600 transition duration-200 flex items-center gap-2">
-                                📱 WhatsApp
+                                <i class="pi pi-whatsapp text-white text-lg"></i>
+                                WhatsApp
                             </a>
+                            <router-link :to="`/export-catalog/product/${product.id}`"
+                                class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 transition">
+                                <i class="pi pi-search text-white text-lg"></i>
+                                Detay
+                            </router-link>
                         </div>
                     </div>
-
                 </div>
             </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center items-center gap-2 mt-10 flex-wrap">
+            <!-- Önceki -->
+            <button @click="changePage(pagination.page - 1)" :disabled="pagination.page === 1"
+                class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition">
+                ‹
+            </button>
+
+            <!-- Sayfa numaraları -->
+            <span v-for="(num, index) in pageNumbers" :key="index" @click="typeof num === 'number' && changePage(num)"
+                :class="[
+                    'px-4 py-2 rounded-lg cursor-pointer transition',
+                    num === pagination.page
+                        ? 'bg-blue-500 text-white font-bold shadow'
+                        : 'bg-gray-100 hover:bg-gray-300',
+                    num === '...' ? 'cursor-default text-gray-400 bg-transparent' : ''
+                ]">
+                {{ num }}
+            </span>
+
+            <!-- Sonraki -->
+            <button @click="changePage(pagination.page + 1)" :disabled="pagination.page === pagination.totalPages"
+                class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition">
+                ›
+            </button>
         </div>
     </div>
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 
 const products = ref([]);
 const categories = ref([]);
 const subCategories = ref([]);
-
 const searchQuery = ref('');
 const selectedCategories = ref([]);
 const selectedSubCategories = ref([]);
+
+const pagination = ref({ page: 1, limit: 6, totalPages: 1 });
 
 const fetchCategories = async () => {
     categories.value = await $fetch('/api/categories');
@@ -94,30 +121,34 @@ const fetchProducts = async () => {
     if (selectedCategories.value.length) params.append('category', selectedCategories.value[0]);
     if (selectedSubCategories.value.length) params.append('subCategory', selectedSubCategories.value[0]);
     if (searchQuery.value) params.append('search', searchQuery.value.trim());
-    products.value = await $fetch(`/api/products?${params.toString()}`);
+    params.append('page', pagination.value.page);
+    params.append('limit', pagination.value.limit);
+
+    const res = await $fetch(`/api/products?${params.toString()}`);
+    products.value = res.data;
+    pagination.value = res.pagination;
 };
 
 const toggleCategory = async (name) => {
     if (selectedCategories.value.includes(name)) {
-        // Kategori iptal edildiğinde
         selectedCategories.value = [];
-        selectedSubCategories.value = []; // alt kategorileri de sıfırla
-        subCategories.value = [];         // alt kategori baloncuklarını temizle
+        selectedSubCategories.value = [];
+        subCategories.value = [];
     } else {
-        // Yeni kategori seçildiğinde
         selectedCategories.value = [name];
         await fetchSubCategories([name]);
     }
+    pagination.value.page = 1; // kategori seçildiğinde resetle
     await fetchProducts();
 };
 
-
 const toggleSubCategory = async (name) => {
     if (selectedSubCategories.value.includes(name)) {
-        selectedSubCategories.value = selectedSubCategories.value.filter(c => c !== name);
+        selectedSubCategories.value = selectedSubCategories.value.filter((c) => c !== name);
     } else {
         selectedSubCategories.value = [name];
     }
+    pagination.value.page = 1; // alt kategori seçildiğinde resetle
     await fetchProducts();
 };
 
@@ -129,7 +160,43 @@ const deleteProduct = async (subtitle) => {
     await fetchProducts();
 };
 
+const changePage = async (newPage) => {
+    if (newPage >= 1 && newPage <= pagination.value.totalPages) {
+        pagination.value.page = newPage;
+        await fetchProducts();
+    }
+};
+
+// Dinamik sayfa numaraları
+const pageNumbers = computed(() => {
+    const total = pagination.value.totalPages;
+    const current = pagination.value.page;
+    const delta = 2; // aktif sayfanın sağ/solunda gösterilecek sayfa
+    const pages = [];
+
+    for (let i = Math.max(1, current - delta); i <= Math.min(total, current + delta); i++) {
+        pages.push(i);
+    }
+
+    if (pages[0] !== 1) {
+        if (pages[0] > 2) pages.unshift('...');
+        pages.unshift(1);
+    }
+
+    if (pages[pages.length - 1] !== total) {
+        if (pages[pages.length - 1] < total - 1) pages.push('...');
+        pages.push(total);
+    }
+
+    return pages;
+});
+
+// 🔹 Arama yapıldığında sayfayı sıfırla
+watch(searchQuery, async () => {
+    pagination.value.page = 1;
+    await fetchProducts();
+});
+
 await fetchCategories();
 await fetchProducts();
-watch(searchQuery, fetchProducts);
 </script>

@@ -13,6 +13,10 @@ export default defineEventHandler(async (event) => {
     const subCategoryQuery = url.searchParams.get('subCategory')
     const searchQuery = url.searchParams.get('search')
 
+    // pagination parametreleri
+    const page = parseInt(url.searchParams.get('page') || '1')
+    const limit = parseInt(url.searchParams.get('limit') || '6') // default: 6 ürün
+
     const where = { isDeleted: false }
 
     // Kategori filtreleme
@@ -42,11 +46,26 @@ export default defineEventHandler(async (event) => {
       ]
     }
 
-    return await prisma.product.findMany({
+    // toplam sayıyı bul
+    const total = await prisma.product.count({ where })
+
+    const products = await prisma.product.findMany({
       where,
       include: { category: true, subCategory: true },
-      orderBy: { createdAt: 'desc' }
+      orderBy: { createdAt: 'desc' },
+      skip: (page - 1) * limit,
+      take: limit
     })
+
+    return {
+      data: products,
+      pagination: {
+        page,
+        limit,
+        total,
+        totalPages: Math.ceil(total / limit)
+      }
+    }
   }
 
   // ----------------------
