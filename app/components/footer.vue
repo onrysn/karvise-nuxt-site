@@ -29,8 +29,9 @@
       <div class="flex-1">
         <div class="flex gap-4 mt-4 text-4xl">
           <i class="pi pi-facebook text-4xl hover:text-blue-500"></i>
-          <i class="pi pi-instagram text-4xl hover:text-pink-500"></i>
-          <i class="pi pi-youtube text-4xl hover:text-red-500"></i>
+          <a href="https://www.instagram.com/karviseexport" target="_blank" rel="noopener noreferrer">
+            <i class="pi pi-instagram text-4xl hover:text-pink-500 transition-colors"></i>
+          </a> <i class="pi pi-youtube text-4xl hover:text-red-500"></i>
         </div>
       </div>
 
