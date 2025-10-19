@@ -9,7 +9,7 @@
             class="w-36 md:w-48 mb-4 bg-white p-2 rounded-lg shadow-lg" />
         </NuxtLink>
         <p class="text-gray-300 text-sm">
-          Modern çözümlerle işinizi büyütün. Dış ticaret ve yazılım alanında güvenilir partneriniz.
+          Grow your business with modern solutions. Your reliable partner in foreign trade and software.
         </p>
       </div>
 
